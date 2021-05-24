@@ -1,9 +1,15 @@
 import React from 'react';
+import '../styles/componentes/Home.css'
+import initialState from '../initialState'
+import ProductsContainer from './ProductsContainer';
 
 
 function Home() {
   return (
-  <h1>soy la Home</h1>
+    <div className="home-container">
+      <h2 className="store-title">Welcome to the best Sawg ecommerce !!</h2>
+      <ProductsContainer products={initialState.products}/>
+    </div>
   )
 }
 

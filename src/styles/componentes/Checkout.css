@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.checkout-container {
+  width: 100%;
+  height: 100vh;
+  /* border: 1px solid red; */
+  margin: 0 auto;
+  background: linear-gradient(
+    180deg,
+    rgb(10, 10, 10) 12%,
+    rgba(0, 0, 0, 0.774) 22%,
+    white 50%
+  );
+  text-align: center;
+  padding-bottom: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.checkout-title {
+  font-size: 45px;
+  font-weight: 600;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.boxes-container {
+  width: 90%;
+  /* border: 1px solid red; */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product-details {
+  width: 500px;
+  height: 105px;
+  display: grid;
+  grid-template: 105px / 40% 30% 30%;
+  grid-template-areas: 'image price button';
+  /* border: 1px solid grey; */
+  margin: 10px 0;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+  border-radius: 7px;
+}
+.details-img {
+  grid-area: image;
+  /* border: 1px solid grey; */
+}
+.details-price {
+  grid-area: price;
+  /* border: 1px solid grey; */
+}
+.details-price p {
+  font-size: 20px;
+  font-weight: 600;
+}
+.details-delete {
+  grid-area: button;
+  /* border: 1px solid grey; */
+}
+
+.total-products {
+  display: grid;
+  height: 200;
+  grid-template: 150px 50px / 250px;
+  grid-template-areas:
+    'box'
+    'next';
+  /* border: 1px solid grey; */
+  margin: 10px;
+  width: fit-content;
+  /* background: white; */
+  border-radius: 7px;
+}
+.total-box {
+  grid-area: box;
+  /* border: 1px solid grey; */
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 2px solid grey;
+  height: fit-content;
+  padding: 15px;
+  background-color: yellow;
+}
+.total-box h2 {
+  margin-bottom: 15px;
+  padding: 7px 15px;
+  margin-top: -40px;
+  /* border: 2px solid grey; */
+  border-radius: 7px;
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid grey;
+}
+.total-box p {
+  font-size: 35px;
+  font-weight: bold;
+  padding: 10px;
+}
+.btn-next {
+  grid-area: next;
+  /* border: 1px solid grey; */
+  height: fit-content;
+}
+.checkout-buttons {
+  width: fit-content;
+  height: fit-content;
+  padding: 8px;
+  background: darkmagenta;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+}
+
+@media (max-width: 865px) {
+  .total-products {
+    margin-top: 40px;
+  }
+}

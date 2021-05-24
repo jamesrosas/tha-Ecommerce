@@ -1,0 +1,22 @@
+.tha-footer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  background-color: black;
+  border-bottom: 2px solid yellow;
+  box-shadow: 0 4px 1px darkmagenta;
+  position: relative;
+  bottom: 2px;
+  padding: 5px 10px;
+}
+.tha-footer p {
+  margin: 10px;
+}
