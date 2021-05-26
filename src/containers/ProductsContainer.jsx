@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProductCard from './ProductCard';
 import '../styles/componentes/ProductsContainer.css'
+import AppContext from '../context/AppContext';
 
-function ProductsContainer({products}) {
+function ProductsContainer() {
+    const { state, addToCart}= useContext(AppContext);
+    const {products} = state;
+    
+    const handleClick = (product) =>{
+        addToCart(product)
+    }
     return(
         <div className="products-list">
             {products.map(item =>{
             return(
                 <li key={item.id}>
-                    <ProductCard info={item}/>
+                    <ProductCard product={item} handleClick={handleClick}/>
                 </li>
             )
             })}

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/componentes/Checkout.css'
 import initialState from '../initialState'
+import { Link } from 'react-router-dom';
 
 function Checkout() {
   return (
@@ -15,7 +16,7 @@ function Checkout() {
           <p>$ 10</p>
         </div>
         <div className="details-delete">
-          <button className="checkout-buttons">Delete</button>
+          <button className="checkout-buttons" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
         </div>
       </div>
       <div className="total-products">
@@ -24,7 +25,9 @@ function Checkout() {
           <p>$ 10</p>
         </div>
         <div className="btn-next">
-          <button className="checkout-buttons">Next Step</button>
+          <Link to="/checkout/information">
+            <button className="checkout-buttons">Continuar compra  <i class="fas fa-arrow-circle-right"></i></button>
+          </Link>
         </div>
       </div>
     </div>

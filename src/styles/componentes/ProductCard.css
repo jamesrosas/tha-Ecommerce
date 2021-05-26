@@ -10,6 +10,7 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
   background-color: white;
+  transition: 350ms;
 }
 .img-card {
   width: 230px;
@@ -48,4 +49,19 @@ p {
 }
 h2 {
   margin: 8px 0;
+}
+.btn-buy {
+  padding: 7px;
+  background: darkmagenta;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  margin-top: 7px;
+  transition: 350ms;
+  cursor: pointer;
+}
+.btn-buy:hover {
+  background: yellow;
+  color: black;
 }

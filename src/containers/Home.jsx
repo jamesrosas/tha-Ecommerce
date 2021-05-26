@@ -7,7 +7,7 @@ import ProductsContainer from './ProductsContainer';
 function Home() {
   return (
     <div className="home-container">
-      <h2 className="store-title">Welcome to the best Sawg ecommerce !!</h2>
+      <h2 className="store-title">Welcome to the best Swag ecommerce !!</h2>
       <ProductsContainer products={initialState.products}/>
     </div>
   )

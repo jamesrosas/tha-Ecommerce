@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AppContext from '../context/AppContext';
 import '../styles/componentes/Header.css'
 
 function Header() {
+    const {state} = useContext(AppContext);
+    const { cart } = state;
     return(
         <div className="tha-header">
             <Link to="/">
@@ -11,7 +14,12 @@ function Header() {
             <nav className="header-nav">
                 <ul>
                     <Link to="/"><li>Home</li></Link>
-                    <Link to="/checkout"><li>Checkout</li></Link>
+                    <Link to="/checkout"><li><i className="fas fa-shopping-bag" title="Checkout"></i></li></Link>
+                    {cart.length > 0 && (
+                        <div className="cart-alert">
+                          {cart.length}
+                        </div>
+                    )}
                 </ul>
             </nav>
         </div>

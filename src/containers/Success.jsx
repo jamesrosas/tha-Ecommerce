@@ -4,8 +4,11 @@ import '../styles/componentes/Success.css'
 
 function Success() {
   return (
-  <h1>soy la Success</h1>
+  <div>
+    <h2>Gracias por tu compra, tu pedido ya esta en proceso</h2>
+  </div>
   )
 }
 
 export default Success;
+

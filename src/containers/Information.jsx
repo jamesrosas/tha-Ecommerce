@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/componentes/Information.css'
 import initialState from '../initialState'
+import { Link } from 'react-router-dom';
 
 
 function Information() {
@@ -22,8 +23,12 @@ function Information() {
             <input type="text" placeholder="Telefono" name="number" />            
           </form>
           <div className="buttons-container">
-            <button>Regresar</button>
-            <button>Pagar</button>
+            <Link to="/checkout">
+              <button>Regresar</button>            
+            </Link>
+            <Link to="/checkout/payment">
+              <button>Pagar</button>
+            </Link>
           </div>
         </div>
         <div className="pedido-box">

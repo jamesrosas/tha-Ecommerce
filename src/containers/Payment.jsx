@@ -4,7 +4,12 @@ import '../styles/componentes/Payment.css'
 
 function Payment() {
   return (
-  <h1>soy la Payment</h1>
+  <div className="payment-container">
+    <h2>Resumen del pedido</h2>
+    <div>
+      <button>Pagar con Paypal</button>
+    </div>
+  </div>
   )
 }
 
