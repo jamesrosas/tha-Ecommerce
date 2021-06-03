@@ -79,8 +79,15 @@
   width: 100%;
   /* border: 1px solid grey; */
   margin: 3px 0;
-  background: grey;
+  background: rgb(200, 200, 200);
   border-radius: 5px;
+}
+.total-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 @media (max-width: 850px) {

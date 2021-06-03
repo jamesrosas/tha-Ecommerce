@@ -1,19 +1,48 @@
-import React from 'react';
+import React, {useRef, useContext} from 'react';
 import '../styles/componentes/Information.css'
-import initialState from '../initialState'
 import { Link } from 'react-router-dom';
+import AppContext from '../context/AppContext';
 
 
 function Information() {
+  const {state, addToBuyer} = useContext(AppContext);
+  const {cart} = state;
+  const form = useRef(null);
+  
+
+  const handleSubmit = () =>{
+    const formData = new FormData(form.current)
+    const buyer = {
+      'name': formData.get('name'),
+      'email': formData.get('email'),
+      'address': formData.get('address'),
+      'apto': formData.get('apto'),
+      'city': formData.get('city'),
+      'country': formData.get('country'),
+      'region': formData.get('region'),
+      'cp': formData.get('postal'),
+      'phone': formData.get('number'),
+    }
+
+    addToBuyer(buyer)
+  }
+
+  const handleSumTotal = () => {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+     // porque? que significa acccumulator, cuando lo estoy definiendo?  hay que averiguar mas sobre el uso del metodo reduce()
+    const sum = cart.reduce(reducer, 0);
+    return sum;
+  }
+
   return (
     <div className="information-container">
       <h1>Tu Informacion</h1>
       <div className="information-boxes">
         <div className="form-box">
-          <h2>Informacion de contacto</h2>
-          <form>
+          <h2>Informacion de Envio</h2>
+          <form ref={form}>
             <input type="text" placeholder="Nombre completo" name="name" />
-            <input type="email" placeholder="Correo Electronico" name="name" />
+            <input type="email" placeholder="Correo Electronico" name="email" />
             <input type="text" placeholder="Direccion" name="address" />
             <input type="text" placeholder="Apto" name="apto" />
             <input type="text" placeholder="Ciudad" name="city" />
@@ -27,15 +56,24 @@ function Information() {
               <button>Regresar</button>            
             </Link>
             <Link to="/checkout/payment">
-              <button>Pagar</button>
+              <button onClick={handleSubmit}>Pagar</button>
             </Link>
           </div>
         </div>
         <div className="pedido-box">
           <h2>Pedido</h2>
-          <div className="pedido-table">
-              <img width={80} src={initialState.products[0].image}/>
-              <p>$ 10</p>
+          <p>No. Productos: {cart.length}</p>
+          {cart.map(item =>{
+            return (
+              <div className="pedido-table">
+                  <img width={80} src={item.image}/>
+                  <p>{item.title}</p>
+                  <p>$ {item.price}</p>
+              </div>
+            )
+          })}
+          <div className="total-container">
+            <p>Total: {`$ ${handleSumTotal()}`}</p>
           </div>
         </div>
       </div>      

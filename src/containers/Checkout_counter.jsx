@@ -30,24 +30,21 @@ function Checkout() {
       <div className="details-cards_container">       
         {cart.map(item => {
           // const isExist = cart.find(item => item.cartId === '1')
-          // if (item.id < 10){
+          if (item.id < 10){
             return (          
-              <div className="product-details">
-                  <div>
-                    <p className="name-text">{item.title}</p>
-                  </div>
+                <div className="product-details">
                   <div className="details-img">
                     <img width={100} src={item.image}/>
                   </div>
-                  <div>
-                    <p className="price-text"> $ {item.price}</p>
-                  </div>
+                  <React.Fragment>
+                    <Counter  item={item}/>
+                  </React.Fragment>
                   <div className="details-delete">
                     <button className="checkout-buttons" onClick={() => handleRemove(item)} title="Eliminar"><i class="fas fa-trash-alt"></i></button>
                   </div>
               </div>
             )          
-          // }
+          }
         }
         )}
       </div>
