@@ -1,13 +1,14 @@
 import React, {useRef, useContext} from 'react';
 import '../styles/componentes/Information.css'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 
 
-function Information() {
+function Information({history}) {
   const {state, addToBuyer} = useContext(AppContext);
   const {cart} = state;
   const form = useRef(null);
+  // const history = useHistory(); ---> este hook que nos proporciona al metodo history ya funciona perfectamente, pero preferi pasar history como prop ya que de todas formas estoy haciendo uso de react-router-dom
   
 
   const handleSubmit = () =>{
@@ -25,6 +26,7 @@ function Information() {
     }
 
     addToBuyer(buyer)
+    history.push('/checkout/payment')
   }
 
   const handleSumTotal = () => {

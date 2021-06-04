@@ -20,5 +20,6 @@
     white 50%
   );
   margin: 0;
-  padding-top: 30px;
+  /* height: fit-content; */
+  padding-top: 200px;
 }
