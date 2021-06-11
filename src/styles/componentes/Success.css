@@ -10,26 +10,38 @@
   justify-content: center;
   align-items: center;
 }
+.thanks-message_container {
+  width: 90%;
+  height: fit-content;
+  margin: 0 auto;
+}
 .ship-message {
-  margin-left: -380px;
+  margin-left: 5px;
 }
 .map-container {
   width: 90%;
   height: fit-content;
-  margin: 20px auto ;
+  margin: 20px auto;
 }
 
-.back-btn_container{
+.back-btn_container {
   width: 100%;
   height: fit-content;
   display: flex;
   justify-content: center;
   margin: 20px 0 40px 0;
 }
-.btn-back_home{
+.btn-back_home {
   text-decoration: none;
   background: darkmagenta;
   color: white;
   padding: 10px;
   border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+  .success-container {
+    padding-top: 100px;
+    height: 900px;
+  }
 }

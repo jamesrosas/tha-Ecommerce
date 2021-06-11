@@ -10,6 +10,12 @@ function ProductsContainer() {
     const handleClick = (product) =>{
         addToCart(product)
     }
+
+    if (products.length === 0){
+        return (
+            <p>LOaaaading.....</p>
+        )
+    }
     return(
         <div className="products-list">
             {products.map(item =>{

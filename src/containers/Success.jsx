@@ -10,8 +10,10 @@ function Success() {
 
   return (
   <div className="success-container">
-    <h2>Gracias por tu compra {`${buyer[0].name}`},<br/> tu pedido ya esta en proceso</h2>
-    <p className="ship-message">*Tu pedido llegara en un periodo de 3-5 dias habiles</p>
+    <div className="thanks-message_container">
+      <h2>Gracias por tu compra {`${buyer[0].name}`},<br/> tu pedido ya esta en proceso</h2>
+      <p className="ship-message">*Tu pedido llegara en un periodo de 3-5 dias habiles</p>
+    </div>
     <div className="map-container">
       <Map/>
     </div>

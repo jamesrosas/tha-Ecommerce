@@ -1,29 +1,37 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import '../styles/componentes/Payment.css';
-import { PayPalButton} from 'react-paypal-button-v2';
+import { PayPalButton } from 'react-paypal-button-v2';
+import pass from '../pass';
 
 
-function Payment({history}) {
-  const {state, addToOrders} = useContext(AppContext);
-  const {cart, buyer} = state;
+function Payment({ history }) {
+  const { state, addToOrders } = useContext(AppContext);
+  const { cart, buyer } = state;
+
+  const clientId = pass.paypalClientId
 
   const paypalOptions = {
-    clientId: 'AUK-zWlaxHLxi1Eug4Nv3yze1HuV1ftOv4iNyB67_UAkdGhm7q2g7-0s3AawBQ2D_ffVYk5smbkBHPiB',
+    clientId: clientId,
     intent: 'capture',
     currency: 'USD'
   }
 
-  const buttonStyles = {   
-      layout:  'vertical',
-      color:   'silver',
-      shape:   'pill',
-      label:   'pay'
+  const buttonStyles = {
+    layout: 'vertical',
+    color: 'silver',
+    shape: 'pill',
+    label: 'pay'
   }
 
   const handlePaymentSuccess = (data) => {
     console.log(data);
-    
+    if (data.status !== 'COMPLETED') {
+      return (
+        <p>Loaaaaaading...</p>
+      )
+    }
+
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
@@ -42,28 +50,28 @@ function Payment({history}) {
   }
 
   return (
-  <div className="payment-container">
-    <h2>Resumen del pedido</h2>
-    <div>
-      {cart.map(item => {
-        return (
-        <div className="payment-list">
-          <p>{item.title}........</p>
-          <span>$ {item.price}</span>
-        </div>
-        )
-      })}
-      <p><strong>Total:</strong> {`$ ${handleSumTotal()}`}</p>
+    <div className="payment-container">
+      <h2>Resumen del pedido</h2>
+      <div>
+        {cart.map(item => {
+          return (
+            <div className="payment-list">
+              <p>{item.title}........</p>
+              <span>$ {item.price}</span>
+            </div>
+          )
+        })}
+        <p><strong>Total:</strong> {`$ ${handleSumTotal()}`}</p>
+      </div>
+      <div className="paypal-btn_container">
+        <PayPalButton paypalOptions={paypalOptions}
+          style={buttonStyles}
+          amount={handleSumTotal()}
+          onSuccess={data => handlePaymentSuccess(data)}
+          onError={error => console.log(error)}
+          onCancel={data => console.log(data)} />
+      </div>
     </div>
-    <div className="paypal-btn_container">
-      <PayPalButton paypalOptions={paypalOptions}
-            style={buttonStyles}
-            amount={handleSumTotal()}
-            onSuccess={data => handlePaymentSuccess(data)}
-            onError={error => console.log(error)}
-            onCancel={data => console.log(data)}/>
-    </div>
-  </div>
   )
 }
 
