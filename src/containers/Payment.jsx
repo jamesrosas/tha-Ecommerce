@@ -14,13 +14,16 @@ function Payment({history}) {
     currency: 'USD'
   }
 
-  const buttonStyles = {
-    layout: 'vertical',
-    shape: 'rect'
+  const buttonStyles = {   
+      layout:  'vertical',
+      color:   'silver',
+      shape:   'pill',
+      label:   'pay'
   }
 
   const handlePaymentSuccess = (data) => {
     console.log(data);
+    
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
@@ -44,17 +47,17 @@ function Payment({history}) {
     <div>
       {cart.map(item => {
         return (
-        <div>
-          <p>{item.title}</p>
-          <span>{item.price}</span>
+        <div className="payment-list">
+          <p>{item.title}........</p>
+          <span>$ {item.price}</span>
         </div>
         )
       })}
-      <p>Total: {`$ ${handleSumTotal()}`}</p>
+      <p><strong>Total:</strong> {`$ ${handleSumTotal()}`}</p>
     </div>
-    <div>
+    <div className="paypal-btn_container">
       <PayPalButton paypalOptions={paypalOptions}
-            buttonStyles={buttonStyles}
+            style={buttonStyles}
             amount={handleSumTotal()}
             onSuccess={data => handlePaymentSuccess(data)}
             onError={error => console.log(error)}

@@ -1,5 +1,23 @@
 .payment-container {
-  padding-top: 150px;
+  padding-top: 100px;
   width: 100%;
-  height: 90vh;
+  overflow: hidden;
+  min-height: 500px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.payment-list{
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.paypal-btn_container {
+  width: 300px;
+  margin: 20px 10px;
+  z-index: 2;
 }

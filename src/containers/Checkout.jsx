@@ -25,7 +25,7 @@ function Checkout() {
     <h2 className="checkout-title">Products List</h2><br/>
     <div className="boxes-container">
       {cart.length === 0 && (
-        <h3>Aun no agregas ningun articulo al carrito :(</h3>
+        <h3>Aun no agregas ningun articulo al carrito <i class="far fa-frown-open"></i></h3>
       )}
       <div className="details-cards_container">       
         {cart.map(item => {

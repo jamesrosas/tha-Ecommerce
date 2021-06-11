@@ -1,7 +1,35 @@
 .success-container {
   width: 100%;
-  height: 80vh;
+  height: 700px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 34px;
   color: black;
-  padding-top: 300px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ship-message {
+  margin-left: -380px;
+}
+.map-container {
+  width: 90%;
+  height: fit-content;
+  margin: 20px auto ;
+}
+
+.back-btn_container{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px 0;
+}
+.btn-back_home{
+  text-decoration: none;
+  background: darkmagenta;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
 }
