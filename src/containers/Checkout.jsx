@@ -1,9 +1,7 @@
 import React, {useContext, useRef, useState} from 'react';
 import '../styles/componentes/Checkout.css'
-import initialState from '../initialState'
 import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
-import Counter from '../components/counter';
 
 function Checkout() {
   const {state, removeToCart, setState} = useContext(AppContext)
@@ -29,8 +27,6 @@ function Checkout() {
       )}
       <div className="details-cards_container">       
         {cart.map(item => {
-          // const isExist = cart.find(item => item.cartId === '1')
-          // if (item.id < 10){
             return (          
               <div className="product-details">
                   <div>
@@ -47,7 +43,6 @@ function Checkout() {
                   </div>
               </div>
             )          
-          // }
         }
         )}
       </div>
