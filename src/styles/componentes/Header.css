@@ -15,7 +15,8 @@
 }
 .header-title {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 30px;
+  font-size: 28px;
+  width: 145px;
   justify-self: flex-start;
   margin-left: 15px;
   border-bottom: 2px solid yellow;
@@ -28,7 +29,7 @@
   border: 2px white solid;
   transition: 350ms;
   position: relative;
-  padding: 8px;
+  padding: 8px 5px 8px 8px;
 }
 .header-nav:hover {
   border: 2px yellow solid;
@@ -61,5 +62,7 @@
 @media (max-width: 800px) {
   .header-nav {
     margin-right: 10px;
+    width: 110px;
+    padding: 5px;
   }
 }
