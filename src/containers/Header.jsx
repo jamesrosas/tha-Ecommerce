@@ -14,12 +14,13 @@ function Header() {
             <nav className="header-nav">
                 <ul>
                     <Link to="/"><li>Home</li></Link>
-                    <Link to="/checkout"><li><i className="fas fa-shopping-bag" title="Checkout"></i></li></Link>
+                    <Link to="/checkout"><li><i className="fas fa-shopping-bag" title="Checkout"></i></li>
                     {cart.length > 0 && (
                         <div className="cart-alert">
                           {cart.length}
                         </div>
                     )}
+                    </Link>
                 </ul>
             </nav>
         </div>

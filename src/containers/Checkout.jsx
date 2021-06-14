@@ -54,7 +54,7 @@ function Checkout() {
         <div className="btn-next">
           {cart.length > 0 && (
             <Link to="/checkout/information">
-              <button className="checkout-buttons">Continuar compra  <i class="fas fa-arrow-circle-right"></i></button>
+              <button className="continue-buttons">Tramitar pedido  <i class="fas fa-arrow-circle-right"></i></button>
             </Link>
           )}
         </div>

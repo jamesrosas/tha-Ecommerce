@@ -13,7 +13,7 @@ function ProductCard({product, handleClick}){
                 <p className="price">$ {product.price}</p>
             </div>
             <div>
-                <button className="btn-buy" onClick={() => handleClick(product)}>Comprar</button>
+                <button className="btn-buy" onClick={() => handleClick(product)}>+ Agregar al carrito</button>
             </div>
         </div>
     )
