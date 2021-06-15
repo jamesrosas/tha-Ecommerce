@@ -3,7 +3,7 @@
     "name": "A cool store",
     "icons": [
       {
-        "src": "./assets/icon.png",
+        "src": "assets/icon.png",
         "sizes": "512x512",
         "type": "image/png"
       }

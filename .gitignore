@@ -1,7 +1,4 @@
 node_modules
-*.png
-*.jpg
-*.svg
 .env
 .env.local
 .env.development.local
