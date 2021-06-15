@@ -9,7 +9,7 @@ function Header() {
     return(
         <div className="tha-header">
             <Link to="/">
-                <h2 className="header-title">Tha Ecommerce</h2>
+                <h2 className="header-title">Black Sheep</h2>
             </Link>
             <nav className="header-nav">
                 <ul>
