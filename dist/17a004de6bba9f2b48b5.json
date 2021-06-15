@@ -1,0 +1,15 @@
+{
+    "short_name": "Black Sheep Ecommerce",
+    "name": "A cool store",
+    "icons": [
+      {
+        "src": "assets/icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#fff",
+    "theme_color": "#fff",
+    "display": "standalone"
+  }
